@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio v2.5 - Enhanced</title>
+    <meta name="description" content="A passionate full-stack developer crafting beautiful digital experiences">
+    <meta property="og:title" content="Your Name - Full Stack Developer">
+    <meta property="og:description" content="A passionate full-stack developer crafting beautiful digital experiences">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Include your CSS here or link to external stylesheet */
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <img src="images/logo.png" alt="Logo" class="preloader-logo">
+        <div class="preloader-text">Crafting pixels...</div>
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor-glow"></div>
+    <div class="theme-transition"></div>
+    <div class="copy-feedback">Email copied! ✓</div>
+    <div class="message-sent-overlay">
+        <div class="message-sent-content">
+            <img src="images/decor-1.png" alt="Success">
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+            <button class="btn btn-primary" onclick="closeMessageOverlay()">Close</button>
+        </div>
+    </div>
+    <div class="scroll-progress"></div>
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+    <div class="animated-bg">
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
+        <div class="gradient-blob blob-3"></div>
+    </div>
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">×</button>
+            <div class="modal-image">
+                <img id="modalProjectImage" src="" alt="">
+            </div>
+            <div class="modal-body">
+                <h2 id="modalProjectTitle"></h2>
+                <p class="project-description" id="modalProjectDescription"></p>
+                <div class="project-tags" id="modalProjectTags"></div>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <h4>Role</h4>
+                        <p id="modalProjectRole"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Duration</h4>
+                        <p id="modalProjectDuration"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Technologies</h4>
+                        <p id="modalProjectTech"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Status</h4>
+                        <p id="modalProjectStatus"></p>
+                    </div>
+                </div>
+                <div class="project-links" id="modalProjectLinks"></div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+                <span class="logo-text">Portfolio.</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <img src="images/icon-light.png" alt="Light Mode" class="theme-icon light">
+                        <img src="images/icon-dark.png" alt="Dark Mode" class="theme-icon dark">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="greeting">👋 Hello, I'm</div>
+                <h1>Your Name</h1>
+                <p class="subtitle">A passionate full-stack developer crafting beautiful digital experiences. I transform ideas into elegant, user-friendly solutions.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Let's Talk</span>
+                        <span>💬</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-img">👨‍💻</div>
+                    <div class="floating-element floating-element-1">
+                        <img src="images/decor-2.png" alt="Creative"> Creative
+                    </div>
+                    <div class="floating-element floating-element-2">
+                        <img src="images/decor-3.png" alt="Fast"> Fast
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <img src="images/scroll-arrow.png" alt="Scroll" class="scroll-arrow-img">
+        </div>
+    </section>
+    <div class="section-divider">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="divider-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:var(--accent-1);stop-opacity:0.3" />
+                    <stop offset="50%" style="stop-color:var(--accent-2);stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:var(--accent-3);stop-opacity:0.3" />
+                </linearGradient>
+            </defs>
+            <path class="divider-gradient" d="M0,40 Q300,10 600,40 T1200,40 L1200,80 L0,80 Z"></path>
+        </svg>
+    </div>
+    <section id="about">
+        <h2 class="section-title" data-text="About Me">About Me</h2>
+        <p class="section-subtitle">Get to know me better and what I bring to the table</p>
+        <div class="about-content">
+            <div class="about-text reveal">
+                <p>Hello! I'm a passionate developer who loves creating innovative digital solutions. With a keen eye for detail and a commitment to excellence, I transform complex problems into elegant experiences.</p>
+                <p>My journey in tech has been driven by curiosity and a genuine love for crafting beautiful interfaces. I believe great design is about creating intuitive experiences that users love.</p>
+                <div class="quote">"Code is poetry written in logic."</div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="skill-item reveal reveal-delay-1">
+                    <img src="images/about-icon.png" alt="Frontend" class="skill-icon">
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Vue.js, Tailwind CSS, responsive design</p>
+                </div>
+                <div class="skill-item reveal reveal-delay-2">
+                    <img src="images/about-icon.png" alt="Backend" class="skill-icon">
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Python, PHP, REST APIs, Database Design, Authentication</p>
+                </div>
+                <div class="skill-item reveal reveal-delay-3">
+                    <img src="images/about-icon.png" alt="UI/UX" class="skill-icon">
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, Adobe XD, User Research, Wireframing, Prototyping</p>
+                </div>
+                <div class="skill-item reveal reveal-delay-4">
+                    <img src="images/about-icon.png" alt="DevOps" class="skill-icon">
+                    <h3>DevOps & Tools</h3>
+                    <p>Git, GitHub, Docker, CI/CD, AWS, Performance Optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path class="divider-gradient" d="M0,40 Q300,70 600,40 T1200,40 L1200,0 L0,0 Z"></path>
+        </svg>
+    </div>
+    <section id="projects">
+        <h2 class="section-title" data-text="My Projects">My Projects</h2>
+        <p class="section-subtitle">A showcase of my recent work and creative endeavors</p>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+    <div class="section-divider">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path class="divider-gradient" d="M0,40 Q300,10 600,40 T1200,40 L1200,80 L0,80 Z"></path>
+        </svg>
+    </div>
+    <section id="contact">
+        <h2 class="section-title" data-text="Get In Touch">Get In Touch</h2>
+        <p class="section-subtitle">Let's create something amazing together</p>
+        <div class="contact-content">
+            <p>I'm always excited to collaborate on new projects and discuss innovative ideas. Whether you have a project in mind or just want to connect, feel free to reach out!</p>
+            <div class="contact-card reveal">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/manlbbwq" method="POST">
+                    <div class="form-status" id="formStatus"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError">Please enter your name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError">Please enter a valid email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message" id="messageError">Please enter your message</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <span>Send Message</span>
+                        <span>✉️</span>
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item" onclick="copyEmail()" style="cursor: pointer;" title="Click to copy email">
+                        <img src="images/contact-icon.png" alt="Email">
+                        <span id="emailAddress">your.email@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/contact-icon.png" alt="Phone">
+                        <span>+63 123 456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/contact-icon.png" alt="Location">
+                        <span>Ilocos, Philippines</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary copy-email-btn" onclick="copyEmail()" style="width: 100%; margin-top: 1rem;">
+                    <span>Copy Email Address</span>
+                    <span>📋</span>
+                </button>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <img src="images/contact-icon.png" alt="GitHub">
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <img src="images/contact-icon.png" alt="LinkedIn">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                        <img src="images/contact-icon.png" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="images/contact-icon.png" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-link" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+                        <img src="images/contact-icon.png" alt="Discord">
+                    </a>
+                </div>
+                <p class="contact-tagline">Let's build something together 💫</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-branding">
+                <span>Built with ☕ & ❤️ by</span>
+                <img src="images/logo.png" alt="Logo">
+                <span>| © 2025 Vyll.dev</span>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Designed & Developed with passion</p>
+        </div>
+    </footer>
+    <script>
+        /* Include your JavaScript here or link to external script */
+    </script>
+</body>
+</html>
